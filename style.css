@@ -646,3 +646,44 @@ footer {
 .nav-btn.filling::before {
     width: 100%;
 }
+/* ================= VISUAL UPGRADE: LUXURY DEPTH & POLISH ================= */
+
+/* 1. Smooth Page Fade-In */
+body {
+    animation: pageFadeIn 0.45s ease-out;
+}
+@keyframes pageFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 2. Gradient Text for Hero Name & Logo */
+.hero-text h1 span {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 3. Soft Ambient Glow Behind Hero */
+.hero {
+    position: relative;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 8%;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, rgba(124, 58, 237, 0.05) 50%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* 4. Premium Card Depth & Soft Top Highlight */
+.about-box, .social-card, .interest-card, .info-card, .contact-form, .floating-card {
+    background: linear-gradient(180deg, #ffffff 0%, #fcfdff 100%);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.06), 0 4px 10px -2px rgba(15, 23, 42, 0.03);
+}
