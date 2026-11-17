@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Himanshu Dagar</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="scrollProgress"></div>
+
+    <header>
+        <nav class="navbar">
+            <a href="/" class="logo">Himanshu<span>Dagar</span></a>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/follow">Follow me</a></li>
+                <li><a href="/contact" class="nav-btn">Let's Talk</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section-light" style="flex: 1;">
+        <div class="container">
+            <div class="section-title">
+                <span>Legal & Trust</span>
+                <h2>Privacy Policy</h2>
+            </div>
+            <div class="about-box" style="text-align: left; max-width: 850px;">
+                <p><strong>Last Updated:</strong> November 2026</p>
+                <p>Welcome to <strong>himanshudagar.in</strong>. Your privacy is important to us. This Privacy Policy explains how we handle any information you share while visiting this website.</p>
+                
+                <h3 style="margin: 20px 0 10px; color: #0f172a;">1. Information We Collect</h3>
+                <p>When you use our "Let's Talk" contact form, we only collect the name, optional email address, and message you voluntarily provide so we can respond to your greeting or inquiry. When you use the Greeting Card Maker, your name is processed directly in your browser and is not stored on any server.</p>
+                
+                <h3 style="margin: 20px 0 10px; color: #0f172a;">2. How We Use Information</h3>
+                <p>The details you submit via the contact form are used strictly to read and reply to your messages. We never sell, rent, or share your personal information with third parties.</p>
+                
+                <h3 style="margin: 20px 0 10px; color: #0f172a;">3. External Links</h3>
+                <p>Our website contains links to external platforms such as WhatsApp, YouTube, X, and LinkedIn. Once you leave our site, their respective privacy policies apply.</p>
+                
+                <h3 style="margin: 20px 0 10px; color: #0f172a;">4. Contact</h3>
+                <p>If you have any questions about this Privacy Policy, feel free to reach out through our <a href="/contact" style="color:#2563eb; font-weight:600;">Let's Talk</a> page.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <a href="/" class="logo">Himanshu<span>Dagar</span></a>
+                <p>My personal space for festival greetings, event invitations, and staying connected with everyone.</p>
+                <div class="footer-location">📍 India | himanshudagar.in</div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-list">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About me</a></li>
+                    <li><a href="/follow">Follow me</a></li>
+                    <li><a href="/contact">Let's Talk</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Me</h4>
+                <ul class="footer-list">
+                    <li><a href="https://whatsapp.com" target="_blank">WhatsApp Channel</a></li>
+                    <li><a href="https://youtube.com" target="_blank">YouTube</a></li>
+                    <li><a href="YOUR_X_LINK" target="_blank">X (Twitter)</a></li>
+                    <li><a href="YOUR_LINKEDIN_LINK" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get In Touch</h4>
+                <p class="footer-contact-text">Want to send a greeting or connect? Drop a message anytime.</p>
+                <a href="/contact" class="footer-cta-btn">Send a Message →</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2026 Himanshu Dagar. All rights reserved.</div>
+            <div style="display:flex; gap:18px; flex-wrap:wrap;">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms & Conditions</a>
+                <a href="#">Back to Top ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" onclick="scrollToTop()" title="Go to top">↑</button>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (header) header.classList.toggle('scrolled', window.scrollY > 20);
+
+            const progressBar = document.getElementById('scrollProgress');
+            if (progressBar) {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                progressBar.style.width = ((scrollTop / scrollHeight) * 100) + '%';
+            }
+
+            const scrollTopBtn = document.getElementById("scrollTopBtn");
+            if (scrollTopBtn) {
+                scrollTopBtn.style.display = (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) ? "block" : "none";
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (!this.getAttribute('href').includes('/contact')) return;
+                e.preventDefault();
+                const targetUrl = this.getAttribute('href');
+                this.classList.add('filling');
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 720);
+            });
+        });
+    </script>
+</body>
+</html>

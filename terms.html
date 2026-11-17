@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - Himanshu Dagar</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="scrollProgress"></div>
+
+    <header>
+        <nav class="navbar">
+            <a href="/" class="logo">Himanshu<span>Dagar</span></a>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/follow">Follow me</a></li>
+                <li><a href="/contact" class="nav-btn">Let's Talk</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section-light" style="flex: 1;">
+        <div class="container">
+            <div class="section-title">
+                <span>Website Rules</span>
+                <h2>Terms & Conditions</h2>
+            </div>
+            <div class="about-box" style="text-align: left; max-width: 850px;">
+                <p><strong>Last Updated:</strong> November 2026</p>
+                <p>By accessing and using <strong>himanshudagar.in</strong>, you agree to comply with the following terms and conditions.</p>
+                
+                <h3 style="margin: 20px 0 10px; color: #0f172a;">1. Personal Use Only</h3>
+                <p>This website is the official personal space of Himanshu Dagar for sharing festival greetings, event updates, and connecting with visitors. Content and greeting cards generated here are meant for personal, non-commercial sharing.</p>
+                
+                <h3 style="margin: 20px 0 10px; color: #0f172a;">2. Intellectual Property</h3>
+                <p>All branding, design elements, text, and custom graphics on himanshudagar.in belong to Himanshu Dagar unless stated otherwise.</p>
+                
+                <h3 style="margin: 20px 0 10px; color: #0f172a;">3. Respectful Communication</h3>
+                <p>When using our contact form, please ensure your messages are respectful and free from spam or harmful content.</p>
+                
+                <h3 style="margin: 20px 0 10px; color: #0f172a;">4. Changes to Terms</h3>
+                <p>We may update these terms or website features at any time without prior notice.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <a href="/" class="logo">Himanshu<span>Dagar</span></a>
+                <p>My personal space for festival greetings, event invitations, and staying connected with everyone.</p>
+                <div class="footer-location">📍 India | himanshudagar.in</div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-list">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About me</a></li>
+                    <li><a href="/follow">Follow me</a></li>
+                    <li><a href="/contact">Let's Talk</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Me</h4>
+                <ul class="footer-list">
+                    <li><a href="https://whatsapp.com" target="_blank">WhatsApp Channel</a></li>
+                    <li><a href="https://youtube.com" target="_blank">YouTube</a></li>
+                    <li><a href="YOUR_X_LINK" target="_blank">X (Twitter)</a></li>
+                    <li><a href="YOUR_LINKEDIN_LINK" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get In Touch</h4>
+                <p class="footer-contact-text">Want to send a greeting or connect? Drop a message anytime.</p>
+                <a href="/contact" class="footer-cta-btn">Send a Message →</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2026 Himanshu Dagar. All rights reserved.</div>
+            <div style="display:flex; gap:18px; flex-wrap:wrap;">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms & Conditions</a>
+                <a href="#">Back to Top ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" onclick="scrollToTop()" title="Go to top">↑</button>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (header) header.classList.toggle('scrolled', window.scrollY > 20);
+
+            const progressBar = document.getElementById('scrollProgress');
+            if (progressBar) {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                progressBar.style.width = ((scrollTop / scrollHeight) * 100) + '%';
+            }
+
+            const scrollTopBtn = document.getElementById("scrollTopBtn");
+            if (scrollTopBtn) {
+                scrollTopBtn.style.display = (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) ? "block" : "none";
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (!this.getAttribute('href').includes('/contact')) return;
+                e.preventDefault();
+                const targetUrl = this.getAttribute('href');
+                this.classList.add('filling');
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 720);
+            });
+        });
+    </script>
+</body>
+</html>
