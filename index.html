@@ -122,25 +122,26 @@
                 <span>Stay Connected</span>
                 <h2>Let's Talk</h2>
             </div>
-            <form id="contactForm" class="contact-form">
-                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                <input type="hidden" name="subject" value="New Message from himanshudagar.in">
+            <form action="https://formsubmit.co" method="POST" class="contact-form">
+    <input type="hidden" name="_subject" value="New Message from himanshudagar.in">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://himanshudagar.in">
 
-                <div class="form-group">
-                    <label>Your Name</label>
-                    <input type="text" name="name" placeholder="Enter your name" required>
-                </div>
-                <div class="form-group">
-                    <label>Your Email (Optional)</label>
-                    <input type="email" name="email" placeholder="Enter your email">
-                </div>
-                <div class="form-group">
-                    <label>Your Message / Wish</label>
-                    <textarea name="message" rows="4" placeholder="Write your message or greeting here..." required></textarea>
-                </div>
-                <button type="submit" id="submitBtn" class="btn-primary" style="width:100%;">Send Message 🚀</button>
-                <p id="formStatus" style="text-align:center; margin-top:15px; font-weight:600;"></p>
-            </form>
+    <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" name="name" placeholder="Enter your name" required>
+    </div>
+    <div class="form-group">
+        <label>Your Email (Optional)</label>
+        <input type="email" name="email" placeholder="Enter your email">
+    </div>
+    <div class="form-group">
+        <label>Your Message / Wish</label>
+        <textarea name="message" rows="4" placeholder="Write your message or greeting here..." required></textarea>
+    </div>
+    <button type="submit" class="btn-primary" style="width:100%;">Send Message 🚀</button>
+</form>
+
 
         </div>
     </section>
@@ -329,50 +330,6 @@
         });
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-
-        // Contact Form Message
-                // Real Email Contact Form (No Page Redirect / No Error)
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                const btn = document.getElementById('submitBtn');
-                const status = document.getElementById('formStatus');
-                
-                btn.textContent = "Sending... ⏳";
-                btn.disabled = true;
-
-                const formData = new FormData(contactForm);
-                const object = Object.fromEntries(formData);
-                const json = JSON.stringify(object);
-
-                try {
-                    const response = await fetch('https://web3forms.com', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
-                        },
-                        body: json
-                    });
-                    const result = await response.json();
-                    if (result.success) {
-                        status.style.color = "#16a34a";
-                        status.textContent = "✅ Thank you! Your message has been sent to Himanshu.";
-                        contactForm.reset();
-                    } else {
-                        status.style.color = "#dc2626";
-                        status.textContent = "❌ Error: " + result.message;
-                    }
-                } catch (error) {
-                    status.style.color = "#dc2626";
-                    status.textContent = "❌ Network error. Please check your internet connection.";
-                }
-
-                btn.textContent = "Send Message 🚀";
-                btn.disabled = false;
-            });
         }
 
     </script>
