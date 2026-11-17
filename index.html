@@ -31,10 +31,10 @@
             <a href="#home" class="logo">Himanshu<span>Dagar</span></a>
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About me</a></li>
-                <li><a href="#follow">Follow me</a></li>
-                <li><a href="#contact" class="nav-btn">Let's Talk</a></li>
+                <li><a href="index.html" class="active-page">Home</a></li>
+                <li><a href="about.html">About me</a></li>
+                <li><a href="follow.html">Follow me</a></li>
+                <li><a href="contact.html" class="nav-btn">Let's Talk</a></li>
             </ul>
         </nav>
     </header>
@@ -50,8 +50,8 @@
                 Welcome to my personal digital home! Whether we are celebrating a special festival, sharing an event invite, or just staying connected, I'm glad you're here.
             </p>
             <div class="hero-buttons">
-                <a href="#about" class="btn-primary">About Me</a>
-                <a href="#contact" class="btn-secondary">Send a Wish / Message</a>
+                <a href="about.html" class="btn-primary">About Me</a>
+                <a href="contact.html" class="btn-secondary">Send a Wish / Message</a>
             </div>
         </div>
 
@@ -110,7 +110,7 @@
 
 <!-- Personal Greeting Card Maker End -->
 
-                <a href="#follow" class="btn-primary">Follow for Updates</a>
+                <a href="follow.html" class="btn-primary">Follow for Updates</a>
             </div>
         </div>
     </div>
@@ -156,10 +156,10 @@
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul class="footer-list">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About me</a></li>
-                    <li><a href="#follow">Follow me</a></li>
-                    <li><a href="#contact">Let's Talk</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About me</a></li>
+                    <li><a href="follow.html">Follow me</a></li>
+                    <li><a href="contact.html">Let's Talk</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -330,6 +330,19 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
+                // Let's Talk Button Slide Fill & Delayed Page Open
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (!this.getAttribute('href').includes('contact.html')) return;
+                e.preventDefault();
+                const targetUrl = this.getAttribute('href');
+                this.classList.add('filling');
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 420);
+            });
+        });
+
 
     </script>
 

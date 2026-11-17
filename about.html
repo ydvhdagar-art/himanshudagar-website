@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Himanshu Dagar</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://w3.org' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232563eb'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='50' font-family='Arial, sans-serif' font-weight='bold'>HD</text></svg>">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            max-width: 960px;
+            margin: 40px auto 0;
+        }
+        .interest-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 28px 24px;
+            text-align: left;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .interest-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 35px rgba(37, 99, 235, 0.1);
+        }
+        .interest-icon {
+            width: 48px;
+            height: 48px;
+            background: #eff6ff;
+            color: #2563eb;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+        .interest-card h3 {
+            font-size: 19px;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+        .interest-card p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        .meta-pills {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+        .meta-pill {
+            background: #f1f5f9;
+            color: #334155;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+                /* Smooth Reveal Animation */
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Himanshu<span>Dagar</span></a>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+                <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active-page">About me</a></li>
+                <li><a href="follow.html">Follow me</a></li>
+                <li><a href="contact.html" class="nav-btn">Let's Talk</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <section class="section-light" style="flex: 1;">
+        <div class="container">
+            <div class="section-title">
+                <span>Get To Know Me</span>
+                <h2>About Himanshu Dagar</h2>
+            </div>
+
+            <!-- Main Bio Card -->
+            <div class="about-box reveal-item">
+                <div class="avatar-circle" style="margin: 0 auto 18px;">HD</div>
+                <div class="meta-pills">
+                    <span class="meta-pill">📍 Jaipur, India</span>
+                    <span class="meta-pill">🎥 Creator (@GSTisphere)</span>
+                    <span class="meta-pill">🌐 himanshudagar.in</span>
+                </div>
+                <p>
+                    Hello! I'm <strong>Himanshu Dagar</strong>. I built <strong>himanshudagar.in</strong> as my personal digital home to stay connected with friends, family, and well-wishers. Whether it's celebrating a special festival, sharing an event invite, or creating helpful content online, I love bringing people together through simple and meaningful digital experiences.
+                </p>
+                <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+                    <a href="follow.html" class="btn-primary">Follow My Channels 📲</a>
+                    <a href="contact.html" class="btn-secondary">Send a Message ✉️</a>
+                </div>
+            </div>
+
+            <!-- 3 Focus Cards -->
+            <div class="about-grid">
+                <div class="interest-card reveal-item">
+                    <div class="interest-icon">🎉</div>
+                    <h3>Celebrations & Events</h3>
+                    <p>Sharing joy during festivals and personal milestones with custom digital greeting cards and live event updates.</p>
+                </div>
+
+                <div class="interest-card reveal-item">
+                    <div class="interest-icon">🎬</div>
+                    <h3>Content Creation</h3>
+                    <p>Creating informative videos and updates on YouTube (@GSTisphere) and connecting directly via WhatsApp Channel.</p>
+                </div>
+
+                <div class="interest-card reveal-item">
+                    <div class="interest-icon">💻</div>
+                    <h3>Tech & Web Building</h3>
+                    <p>Exploring modern web tools, designing clean user experiences, and building creative projects from scratch.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <a href="index.html" class="logo">Himanshu<span>Dagar</span></a>
+                <p>My personal space for festival greetings, event invitations, and staying connected with everyone.</p>
+                <div class="footer-location">📍 India | himanshudagar.in</div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About me</a></li>
+                    <li><a href="follow.html">Follow me</a></li>
+                    <li><a href="contact.html">Let's Talk</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Me</h4>
+                <ul class="footer-list">
+                    <li><a href="https://www.whatsapp.com/channel/0029Vb8YHhw8PgsOJOckyG42" target="_blank">WhatsApp Channel</a></li>
+                    <li><a href="https://youtube.com/@GSTisphere" target="_blank">YouTube</a></li>
+                    <li><a href="https://x.com/himanshudagar05?s=11" target="_blank">X (Twitter)</a></li>
+                    <li><a href="https://www.linkedin.com/in/himanshu-dagar-b22761430" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get In Touch</h4>
+                <p class="footer-contact-text">Want to send a greeting or connect? Drop a message anytime.</p>
+                <a href="contact.html" class="footer-cta-btn">Send a Message →</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2026 Himanshu Dagar. All rights reserved.</div>
+            <div><a href="#">Back to Top ↑</a></div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+                // Smooth Scroll Reveal
+        const revealElements = document.querySelectorAll('.reveal-item');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 120);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+                // Let's Talk Button Slide Fill & Delayed Page Open
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (!this.getAttribute('href').includes('contact.html')) return;
+                e.preventDefault();
+                const targetUrl = this.getAttribute('href');
+                this.classList.add('filling');
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 420);
+            });
+        });
+
+
+    </script>
+</body>
+</html>

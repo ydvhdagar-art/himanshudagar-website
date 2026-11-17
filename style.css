@@ -613,3 +613,36 @@ footer {
     0% { transform: scale(0.85) translateY(10px); opacity: 0; }
     100% { transform: scale(1) translateY(0); opacity: 1; }
 }
+/* ================= ACTIVE PAGE INDICATOR ================= */
+.nav-links li a.active-page {
+    color: #2563eb !important;
+    font-weight: 700;
+}
+.nav-links li a.active-page::after {
+    width: 100% !important;
+}
+/* ================= LET'S TALK SLIDE FILL ANIMATION (FIXED) ================= */
+.nav-btn {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+    display: inline-block;
+    isolation: isolate;
+}
+
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #0f172a;
+    border-radius: 50px;
+    z-index: -1;
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-btn.filling::before {
+    width: 100%;
+}
